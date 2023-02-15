@@ -107,8 +107,8 @@ public class login implements ActionListener {
 		if(txtFBenutzer.getText().isEmpty() || pwdField.getPassword().length == 0) {
 			JOptionPane.showMessageDialog(null, "One or both fields are empty");
 		}else {
-			startseite window = new startseite();
-		window.newWindow();
+			startseite swindow = new startseite();
+		swindow.newSWindow();
 		frame.setVisible(false);
 		}
 		

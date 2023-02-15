@@ -32,7 +32,7 @@ public class mitarbeiterliste {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void newMLWindow() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -99,6 +99,9 @@ public class mitarbeiterliste {
 		btn_AddEmployee.setFocusPainted(false);
 		btn_AddEmployee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				mitarbeiter marbeiter = new mitarbeiter();
+				marbeiter.newMWindow();
+				frmAuftragsverwaltung.setVisible(false);
 			}
 		});
 		btn_AddEmployee.setBounds(281, 156, 81, 52);
@@ -118,6 +121,9 @@ public class mitarbeiterliste {
 		JButton btn_back = new JButton("zur\u00FCck");
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				startseite srtseite = new startseite();
+				srtseite.newSWindow();
+				frmAuftragsverwaltung.setVisible(false);
 			}
 		});
 		btn_back.setBounds(64, 672, 89, 36);
