@@ -5,14 +5,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class startseite {
 
 	private JFrame frmStartseite;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -62,7 +68,18 @@ public class startseite {
 		frmStartseite.getContentPane().add(btnAuftrag);
 		
 		JButton btnMitarbeiter = new JButton("Mitarbeiter");
+		btnMitarbeiter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	
+				
+				mitarbeiterliste ma = new mitarbeiterliste();
+				ma.main(null);
+				frmStartseite.setVisible(false);
+				
+			}
+		});
 		btnMitarbeiter.setBounds(372, 188, 119, 54);
 		frmStartseite.getContentPane().add(btnMitarbeiter);
+
+
 	}
 }

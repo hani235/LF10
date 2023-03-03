@@ -108,7 +108,7 @@ public class login implements ActionListener {
 			JOptionPane.showMessageDialog(null, "One or both fields are empty");
 		}else {
 			startseite window = new startseite();
-		window.newWindow();
+		startseite.newWindow();
 		frame.setVisible(false);
 		}
 		

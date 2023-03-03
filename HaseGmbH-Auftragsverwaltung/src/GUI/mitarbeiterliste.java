@@ -15,11 +15,15 @@ import javax.swing.JTextField;
 
 import de.oszimt.lf10aContractMgmt.impl.HaseGmbHManagement;
 import de.oszimt.lf10aContractMgmt.model.Employee;
+import java.awt.Component;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.SwingConstants;
+import javax.swing.border.MatteBorder;
 
 public class mitarbeiterliste {
 
 	private JFrame frmAuftragsverwaltung;
-	private JTable table;
 	private JTextField tx_filter;
 	String[] columnNames = {
 			"Id",
@@ -28,11 +32,12 @@ public class mitarbeiterliste {
             "Email",
             "Tel.Nr"
 	};
+	private JTable table;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -63,7 +68,7 @@ public class mitarbeiterliste {
 		
 		for(int i = 0; i < mliste.size(); i++) {
 			
-			data[i][0] = new Integer(mliste.get(i).getEmployeeID());
+			data[i][0] = mliste.get(i).getEmployeeID();
 			data[i][1] = mliste.get(i).getFirstname();
 			data[i][2] = mliste.get(i).getLastname();
 			data[i][3] = mliste.get(i).getEmail();
@@ -85,7 +90,10 @@ public class mitarbeiterliste {
 		
 		
 		table = new JTable( data, this.columnNames);
-		table.setBounds(64, 357, 1028, 227);
+		table.setBorder(new LineBorder(new Color(0, 0, 0)));
+		table.setRowHeight(30);
+		table.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		table.setBounds(64, 357, 1034, 230);
 		frmAuftragsverwaltung.getContentPane().add(table);
 		
 		JLabel lb_NewLabel = new JLabel("Mitarbeiterliste");
@@ -118,34 +126,53 @@ public class mitarbeiterliste {
 		JButton btn_back = new JButton("zur\u00FCck");
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				startseite window = new startseite();
+				startseite.newWindow();
+				frmAuftragsverwaltung.setVisible(false);
 			}
 		});
 		btn_back.setBounds(64, 672, 89, 36);
 		frmAuftragsverwaltung.getContentPane().add(btn_back);
 		
 		JLabel lblNewLabel = new JLabel("Employee Id");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel.setBounds(142, 332, 89, 14);
+		lblNewLabel.setBounds(64, 321, 207, 36);
 		frmAuftragsverwaltung.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Vorname");
+		lblNewLabel_1.setBorder(new MatteBorder(1, 0, 1, 1, (Color) new Color(0, 0, 0)));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_1.setBounds(339, 332, 81, 14);
+		lblNewLabel_1.setBounds(271, 321, 207, 36);
 		frmAuftragsverwaltung.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nachname\r\n");
+		lblNewLabel_2.setBorder(new MatteBorder(1, 0, 1, 1, (Color) new Color(0, 0, 0)));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_2.setBounds(536, 333, 81, 14);
+		lblNewLabel_2.setBounds(476, 321, 209, 36);
 		frmAuftragsverwaltung.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("E-Mail");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBorder(new MatteBorder(1, 0, 1, 1, (Color) new Color(0, 0, 0)));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_3.setBounds(759, 332, 46, 14);
+		lblNewLabel_3.setBounds(684, 321, 208, 36);
 		frmAuftragsverwaltung.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Tel");
+		lblNewLabel_4.setBorder(new MatteBorder(1, 0, 1, 1, (Color) new Color(0, 0, 0)));
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel_4.setBounds(986, 333, 46, 14);
+		lblNewLabel_4.setBounds(891, 321, 207, 36);
 		frmAuftragsverwaltung.getContentPane().add(lblNewLabel_4);
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
 	}
 }
