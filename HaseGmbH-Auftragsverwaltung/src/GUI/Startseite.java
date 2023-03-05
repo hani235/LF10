@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-public class startseite {
+public class Startseite {
 
 	private JFrame frmStartseite;
 	
@@ -26,7 +26,7 @@ public class startseite {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					startseite window = new startseite();
+					Startseite window = new Startseite();
 					window.frmStartseite.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class startseite {
 	/**
 	 * Create the application.
 	 */
-	public startseite() {
+	public Startseite() {
 		initialize();
 	}
 
@@ -71,7 +71,7 @@ public class startseite {
 		btnMitarbeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
 				
-				mitarbeiterliste ma = new mitarbeiterliste();
+				Mitarbeiterliste ma = new Mitarbeiterliste();
 				ma.main(null);
 				frmStartseite.setVisible(false);
 				

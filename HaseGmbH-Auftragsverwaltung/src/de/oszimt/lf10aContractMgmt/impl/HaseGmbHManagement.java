@@ -7,12 +7,25 @@ import java.util.ArrayList;
 import de.oszimt.lf10aContractMgmt.model.*;
 
 public class HaseGmbHManagement implements IntContractMgmt, IntCustomerMgmt, IntEmployeeMgmt {
+	
+	
+	private static HaseGmbHManagement MANAGEMENT;
+	
+	public static HaseGmbHManagement GET_INSTANCE() {
+		if(MANAGEMENT == null) {
+			MANAGEMENT = new HaseGmbHManagement();
+			MANAGEMENT.init();
+		}
+		return MANAGEMENT;
+	}
+	
+	private HaseGmbHManagement() {}
 
-	private ArrayList<Employee> employeeList;
+	public ArrayList<Employee> employeeList;
 	private ArrayList<Customer> customerList;
 	private ArrayList<Contract> contractList;
 
-	public HaseGmbHManagement() {
+	public void init() {
 		this.employeeList = new ArrayList<Employee>();
 		this.customerList = new ArrayList<Customer>();
 		this.contractList = new ArrayList<Contract>();
@@ -28,11 +41,6 @@ public class HaseGmbHManagement implements IntContractMgmt, IntCustomerMgmt, Int
 
 	@Override
 	public boolean addNewEmployee(Employee newEmployee) {
-		for (Employee e : employeeList)
-			if (e.equals(newEmployee)) {
-				System.err.println("Error: employee id in used.");
-				return false;
-			}
 		employeeList.add(newEmployee);
 		return true;
 	}

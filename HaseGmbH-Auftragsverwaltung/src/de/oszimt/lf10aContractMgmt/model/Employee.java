@@ -7,6 +7,7 @@ public class Employee {
 	private Address address;
 	private String email;
 	private String telephone;
+	private String addressName;
 	private static int nextID= 10000;   // this is only for internal usage.
 	
 	public Employee(String firstname, String lastname, 
@@ -17,6 +18,25 @@ public class Employee {
 		this.address = address;
 		this.email = email;
 		this.telephone = telephone;
+	}
+	public void setAllFields(String firstname, String lastname, 
+			Address address, String email, String telephone) {
+		this.employeeID = generateNewID();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.address = address;
+		this.email = email;
+		this.telephone = telephone;
+	}
+	
+	
+	
+	public void setAdressName(String addressName) {
+		this.addressName = addressName;
+	}
+
+	public String getAddressName() {
+		return addressName;
 	}
 	
 	private int generateNewID() {

@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 
-public class login implements ActionListener {
+public class Login implements ActionListener {
 
 	private JFrame frame;
 	private JTextField txtFBenutzer;
@@ -31,7 +31,7 @@ public class login implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					login window = new login();
+					Login window = new Login();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class login implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public login() {
+	public Login() {
 		initialize();
 	}
 
@@ -53,48 +53,52 @@ public class login implements ActionListener {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setMinimumSize(new Dimension(600, 400));
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 639, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 10, 566, 343);
+		panel.setBounds(10, 10, 603, 343);
 		frame.getContentPane().add(panel);
 		
 		JLabel lblLogin = new JLabel("LOGIN");
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblLogin.setBounds(190, 35, 200, 100);
+		lblLogin.setBounds(197, 41, 200, 100);
 		panel.add(lblLogin);
 		
 		JLabel lblBenutzer = new JLabel("Benutzername:");
 		lblBenutzer.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblBenutzer.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblBenutzer.setBounds(165, 145, 116, 20);
+		lblBenutzer.setBounds(102, 152, 116, 20);
 		panel.add(lblBenutzer);
 		
 		JLabel lblPasswort = new JLabel("Passwort:");
 		lblPasswort.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPasswort.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblPasswort.setBounds(148, 186, 133, 20);
+		lblPasswort.setBounds(85, 183, 133, 20);
 		panel.add(lblPasswort);
 		
 		txtFBenutzer = new JTextField();
-		txtFBenutzer.setBounds(291, 145, 149, 22);
+		txtFBenutzer.setBounds(222, 151, 212, 22);
 		panel.add(txtFBenutzer);
 		txtFBenutzer.setColumns(10);
 		
 		pwdField = new JPasswordField();
-		pwdField.setBounds(291, 184, 149, 22);
+		pwdField.setBounds(222, 184, 212, 22);
 		panel.add(pwdField);
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnLogin.setBounds(350, 226, 91, 21);
+		btnLogin.setBounds(222, 214, 80, 25);
 		panel.add(btnLogin);
 		
 		
 		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Passwort vergessen?");
+		lblNewLabel.setBounds(312, 221, 154, 14);
+		panel.add(lblNewLabel);
 		btnLogin.addActionListener(this); 
 
 
@@ -107,8 +111,8 @@ public class login implements ActionListener {
 		if(txtFBenutzer.getText().isEmpty() || pwdField.getPassword().length == 0) {
 			JOptionPane.showMessageDialog(null, "One or both fields are empty");
 		}else {
-			startseite window = new startseite();
-		startseite.newWindow();
+			Startseite window = new Startseite();
+		Startseite.newWindow();
 		frame.setVisible(false);
 		}
 		

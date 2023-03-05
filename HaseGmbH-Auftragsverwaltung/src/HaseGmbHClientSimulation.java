@@ -14,7 +14,7 @@ public class HaseGmbHClientSimulation {
 	}
 
 	public HaseGmbHClientSimulation() {
-		HaseGmbHManagement haseMgmtDriver = new HaseGmbHManagement();
+		HaseGmbHManagement haseMgmtDriver =  HaseGmbHManagement.GET_INSTANCE();
 
 		System.out.println(" list of the test-employees:");
 		for (Employee e : haseMgmtDriver.getAllEmployees()) {
