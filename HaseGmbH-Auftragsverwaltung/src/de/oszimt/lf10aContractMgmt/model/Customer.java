@@ -6,12 +6,12 @@ public class Customer {
 	private int customerID;
 	private String firstname;
 	private String lastname;
-	private LocalDate birthday;
+	private String birthday;
 	private String email;
 	private Address address;
 	private static int nextID = 1009900;  // this is only for internal usage. 
 	
-	public Customer(String firstname, String lastname, LocalDate birthday, String email,
+	public Customer(String firstname, String lastname, String birthday, String email,
 			Address address) {
 		super();
 		this.customerID = generateNewID();
@@ -50,11 +50,11 @@ public class Customer {
 		this.lastname = lastname;
 	}
 
-	public LocalDate getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(LocalDate birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
@@ -88,6 +88,16 @@ public class Customer {
 				return true;
 		}
 		return false;
+	}
+
+	public void setAllFields(String firstname, String lastname, 
+			Address address, String email,  String birthday) {
+		this.customerID = generateNewID();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.address = address;
+		this.email = email;
+		this.birthday = birthday;
 	}
 	
 }

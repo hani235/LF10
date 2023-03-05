@@ -1,4 +1,4 @@
-package GUI;
+package view.Mitarbeiter;
 
 import java.awt.EventQueue;
 

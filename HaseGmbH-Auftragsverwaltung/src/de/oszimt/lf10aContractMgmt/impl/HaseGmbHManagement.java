@@ -235,31 +235,31 @@ public class HaseGmbHManagement implements IntContractMgmt, IntCustomerMgmt, Int
 	public void setupTestCustomers() {
 
 		Customer aCustomer;
-		aCustomer = new Customer("Karin", "Nielsen", LocalDate.of(1970, 3, 21), "nielsen@acidlsdshop.com",
+		aCustomer = new Customer("Karin", "Nielsen", "02.06.78", "nielsen@acidlsdshop.com",
 				new Address("Theodor-Storm-Straße", "23", "73529", "Berlin", "Deutschland"));
 		addNewCustomer(aCustomer);
 
-		aCustomer = new Customer("Timon", "Klier", LocalDate.of(1968, 8, 11), "klier68@gmail.com",
+		aCustomer = new Customer("Timon", "Klier", "01.06.88", "klier68@gmail.com",
 				new Address("Lübzer Straße", "6", "12529", "Berlin", "Deutschland"));
 		addNewCustomer(aCustomer);
 
-		aCustomer = new Customer("Egon", "Diederichsen", LocalDate.of(1975, 7, 4), "egondiederichsen@gmail.com",
+		aCustomer = new Customer("Egon", "Diederichsen", "05.06.98", "egondiederichsen@gmail.com",
 				new Address("Loretostraße", "29", "10119", "Berlin", "Deutschland"));
 		addNewCustomer(aCustomer);
 
-		aCustomer = new Customer("Thore", "Rogowski", LocalDate.of(1963, 5, 14), "rogowski@ebarg.net",
+		aCustomer = new Customer("Thore", "Rogowski","05.06.18", "rogowski@ebarg.net",
 				new Address("Sandäckerstraße", "25", "14537", "Berlin", "Deutschland"));
 		addNewCustomer(aCustomer);
 
-		aCustomer = new Customer("Jan-Hendrik", "Kohnen", LocalDate.of(1985, 9, 2), "kohnen@gmx.net",
+		aCustomer = new Customer("Jan-Hendrik", "Kohnen", "05.06.68", "kohnen@gmx.net",
 				new Address("Pfarrer-Baumann-Straße", "9", "10577", "Berlin", "Deutschland"));
 		addNewCustomer(aCustomer);
 
-		aCustomer = new Customer("Nils", "Mantel", LocalDate.of(1955, 6, 19), "mantel@btcmail.org",
+		aCustomer = new Customer("Nils", "Mantel", "05.06.58", "mantel@btcmail.org",
 				new Address("Kattenescher Weg", "25", "13657", "Berlin", "Deutschland"));
 		addNewCustomer(aCustomer);
 
-		aCustomer = new Customer("Kai", "Wiese", LocalDate.of(1973, 4, 26), "wiese.kai@webmail.de",
+		aCustomer = new Customer("Kai", "Wiese", "05.06.48", "wiese.kai@webmail.de",
 				new Address("Dr.-Heffner-Straße", "33", "14112", "Berlin", "Deutschland"));
 		addNewCustomer(aCustomer);
 

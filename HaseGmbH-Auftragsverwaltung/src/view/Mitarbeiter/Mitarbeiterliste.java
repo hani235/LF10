@@ -1,4 +1,4 @@
-package GUI;
+package view.Mitarbeiter;
 
 import java.awt.EventQueue;
 import java.util.*;
@@ -24,6 +24,8 @@ import javax.swing.ListSelectionModel;
 
 import de.oszimt.lf10aContractMgmt.impl.HaseGmbHManagement;
 import de.oszimt.lf10aContractMgmt.model.Employee;
+import view.Startseite;
+
 import java.awt.Component;
 import java.awt.Desktop.Action;
 import java.awt.Color;

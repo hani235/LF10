@@ -1,4 +1,4 @@
-package GUI;
+package view;
 
 import java.awt.EventQueue;
 
@@ -9,6 +9,10 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import view.Kunden.Kundenliste;
+import view.Mitarbeiter.Mitarbeiterliste;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -60,6 +64,14 @@ public class Startseite {
 		frmStartseite.getContentPane().add(ss_name);
 		
 		JButton btnKunden = new JButton("Kunden");
+		btnKunden.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Kundenliste kl = new Kundenliste();
+				kl.main(null);
+				frmStartseite.setVisible(false);
+			}
+		});
 		btnKunden.setBounds(84, 188, 119, 54);
 		frmStartseite.getContentPane().add(btnKunden);
 		
